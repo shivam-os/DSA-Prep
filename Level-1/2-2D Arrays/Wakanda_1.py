@@ -1,19 +1,27 @@
-#Take input for the matrix
-matRows = int(input())
-matCols = int(input())
-mat = []
-for row in range(matRows):
-  tempRow = []
-  for cols in range(matCols):
-    val = int(input())
-    tempRow.append(val)
-  mat.append(tempRow)
+def matrix_input(mat):
+    row = int(input("Enter the row size:"))
+    col = int(input("Enter the col size: "))
 
-#Print elements in required pattern
-for col in range(len(mat[0])):
-  if (col % 2 == 0):
-    for row in range(len(mat)):
-      print(mat[row][col])
-  else:
-    for row in range(len(mat) - 1, -1, -1):
-      print(mat[row][col])
+    for i in range(row):
+        temp = []
+        for j in range(col):
+            item = int(input("Enter the item: "))
+            temp.append(item)
+        mat.append(temp)
+
+def wakanda_path(mat):
+    row = len(mat)
+    col = len(mat[0])
+
+    for j in range(col):
+        if j % 2 == 0:
+            for i in range(row):
+                print(mat[i][j])
+        else:
+            for i in range(row - 1 , 0, -1):
+                print(mat[i][j])
+                
+#Create matrix
+mat = []
+matrix_input(mat)
+wakanda_path(mat)

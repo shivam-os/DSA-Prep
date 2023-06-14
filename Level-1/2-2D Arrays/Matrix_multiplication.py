@@ -1,46 +1,60 @@
-#Take input for first matrix
-m1rows = int(input())
-m1cols = int(input())
-m1arr = []
-for row in range(m1rows):
-  m1temp = []
-  for col in range(m1cols):
-    val = int(input())
-    m1temp.append(val)
-  m1arr.append(m1temp)
-
-#Taking input for second matrix
-m2rows = int(input())
-m2cols = int(input())
-m2arr = []
-for row in range(m2rows):
-  m2temp = []
-  for col in range(m2cols):
-    val = int(input())
-    m2temp.append(val)
-  m2arr.append(m2temp)
-
-#Multiply matrices
-def matrixMultiplication(m1arr, m2arr):
-  m3arr = []
-  
-  for row in range(len(m1arr)):
-    m3temp = []
-    for col in range(len(m2arr[0])):
-      val = 0
-      for comm in range(len(m2arr)):
-        val += m1arr[row][comm] * m2arr[comm][col]
-      m3temp.append(val)
-    m3arr.append(m3temp)
+def create_matrix(mat):
+    row = int(input("Enter the row size: "))
+    col = int(input("Enter the column size: "))
     
-  return m3arr;
+    for i in range(row):
+        temp = []
+        for j in range(col):
+            item = int(input("Enter the item: "))
+            temp.append(item)
+        mat.append(temp)
 
-#Check if matrices can even be multiplied
-if (m1cols != m2rows):
-  print("Invalid input")
-else:
-  m3arr = matrixMultiplication(m1arr, m2arr)
-  for row in range(len(m3arr)):
-    for col in range (len(m3arr[0])):
-      print(m3arr[row][col], end=" ")
-    print()
+def print_matrix(mat):
+    print("Matrix: ")
+
+    # for i in range(len(mat)):
+    #     for j in range(len(mat[0])):
+    #         print(mat[i][j], " ", end="")
+    #     print()
+
+    #Python way
+    for i in mat:
+        for j in i:
+            print(j, " ", end="")
+        print()
+
+
+def multiply_matrix(matA, matB):
+    if len(matA[0]) != len(matB):
+        return "Invalid input"
+    
+    matC = []
+    row = len(matA)
+    col = len(matB[0])
+    comm = len(matA[0])
+
+    for i in range(row):
+        temp = []
+        for j in range(col):
+            item = 0
+            for k in range(comm):
+                item += matA[i][k] * matB[k][j]
+            temp.append(item)
+        matC.append(temp)
+
+    print_matrix(matC)
+
+#Create first matrix
+matA = []
+create_matrix(matA)
+print_matrix(matA)
+
+#Create second matrix
+matB = []
+create_matrix(matB)
+print_matrix(matB)
+
+#Multiply the first & second matrix
+multiply_matrix(matA, matB)
+
+
