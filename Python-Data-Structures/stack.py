@@ -1,4 +1,6 @@
 #Stack implementation in Python
+#It can also be implemented using linked list
+
 class Stack:
     def __init__(self, size):
         self.size = size #To save the initial size of stack
