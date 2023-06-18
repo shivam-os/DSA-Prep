@@ -22,7 +22,7 @@ class Queue:
             self.rear += 1
             self.queue[self.front] = value
         else:
-            self.queue[rear]
+            self.queue[self.rear]
 
 
 

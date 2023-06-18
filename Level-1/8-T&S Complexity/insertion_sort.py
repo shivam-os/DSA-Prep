@@ -1,8 +1,8 @@
-def bubble_sort(arr):
-    for i in range(len(arr) - 1):
-        for j in range(len(arr) - 1 - i):
-            if arr[j] > arr[j + 1]:
-                temp = arr [j]
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        for j in range(i - 1, -1, -1):
+            if arr[j + 1] < arr [j]:
+                temp = arr[j]
                 arr[j] = arr[j + 1]
                 arr[j + 1] = temp
 
@@ -14,5 +14,5 @@ for i in range(size):
     arr.append(item)
 
 print("Before sorting:", arr)
-bubble_sort(arr)
+insertion_sort(arr)
 print("After sorting:", arr)
