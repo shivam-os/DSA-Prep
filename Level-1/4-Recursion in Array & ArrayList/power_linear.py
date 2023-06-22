@@ -1,4 +1,6 @@
 def power_linear(num, times):
+    #Time complexity: O(log(n))
+
     #Base condition
     if times == 0:
         return 1
