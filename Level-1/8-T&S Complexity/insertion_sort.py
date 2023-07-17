@@ -1,10 +1,13 @@
+'''
+Intiution: Insert the element at their correct position in a portion of array
+'''
 def insertion_sort(arr):
     for i in range(1, len(arr)):
-        for j in range(i - 1, -1, -1):
-            if arr[j + 1] < arr [j]:
+        for j in range(i, 0, -1):
+            if arr[j] < arr[j-1]:
                 temp = arr[j]
-                arr[j] = arr[j + 1]
-                arr[j + 1] = temp
+                arr[j] = arr[j-1]
+                arr[j-1] = temp
 
 size = int(input("Enter the size of array: "))
 arr = []

@@ -1,3 +1,7 @@
+'''
+Intiution: Select the smallest element and place it from start.
+'''
+
 def selection_sort(arr):
   for i in range(len(arr) - 1):
     min = i
