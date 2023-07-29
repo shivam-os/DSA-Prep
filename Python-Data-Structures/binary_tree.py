@@ -13,6 +13,11 @@ class BinaryTree:
         self.root = Node(root)
 
     def preorder_traversal(self, node):
+        '''
+        Time Complexity: O(N)
+        Space Complexity: O(N)
+        '''
+        
         #Base condition
         if node == None:
             return
